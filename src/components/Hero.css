@@ -68,12 +68,6 @@
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.social-link:hover {
-  border-color: var(--color-gold);
-  background-color: rgba(184, 150, 62, 0.1);
-  transform: translateY(-2px);
-}
-
 .social-link svg {
   width: 18px;
   height: 18px;
@@ -81,8 +75,28 @@
   transition: fill 0.3s ease;
 }
 
-.social-link:hover svg {
-  fill: var(--color-gold);
+@media (hover: hover) and (pointer: fine) {
+  .social-link:hover {
+    border-color: var(--color-gold);
+    background-color: rgba(184, 150, 62, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .social-link:hover svg {
+    fill: var(--color-gold);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .social-link:active {
+    border-color: var(--color-gold);
+    background-color: rgba(184, 150, 62, 0.15);
+    transform: scale(0.95);
+  }
+
+  .social-link:active svg {
+    fill: var(--color-gold);
+  }
 }
 
 .plant-container {
@@ -116,8 +130,17 @@
   transition: opacity 0.3s ease;
 }
 
-.scroll-indicator:hover {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .scroll-indicator:hover {
+    opacity: 1;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .scroll-indicator:active {
+    opacity: 1;
+    transform: translateX(-50%) scale(0.95);
+  }
 }
 
 .scroll-text {
@@ -281,31 +304,42 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    padding-bottom: 80px;
+  }
+
   .hero-content {
     padding: 0 2rem;
-    padding-top: 100px;
+    padding-top: 120px;
+    max-width: 100%;
   }
 
   .tagline {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
   }
 
   .hero-bg {
-    width: 80%;
-    right: -30%;
-    opacity: 0.95;
+    width: 70%;
+    right: -20%;
+    opacity: 0.85;
+    top: 0;
   }
 
   .plant-container {
-    bottom: 5%;
+    bottom: 10%;
+    left: 50%;
   }
 
   .plant {
-    height: 40vh;
+    height: 35vh;
+    max-height: 350px;
   }
 
   .scroll-indicator {
-    bottom: 2rem;
+    bottom: 2.5rem;
   }
 
   .scroll-text {
@@ -318,16 +352,69 @@
   }
 
   .hero-socials {
-    gap: 1.2rem;
+    gap: 1rem;
+    margin-top: 1rem;
   }
 
   .social-link {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
   }
 
   .social-link svg {
-    width: 16px;
-    height: 16px;
+    width: 17px;
+    height: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding-top: 100px;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .hero-bg {
+    width: 85%;
+    right: -25%;
+    opacity: 0.75;
+  }
+
+  .plant {
+    height: 30vh;
+  }
+
+  .plant-container {
+    bottom: 12%;
+  }
+
+  .hero-socials {
+    gap: 0.8rem;
+  }
+
+  .social-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-link svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .scroll-indicator {
+    bottom: 2rem;
+  }
+
+  .scroll-text {
+    font-size: 0.65rem;
+  }
+
+  .scroll-arrow {
+    width: 18px;
+    height: 26px;
   }
 }
