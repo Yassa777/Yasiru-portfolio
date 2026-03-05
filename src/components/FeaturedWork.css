@@ -22,6 +22,12 @@
   gap: 3rem;
 }
 
+.work-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .work-card {
   padding: 2rem;
   background: linear-gradient(

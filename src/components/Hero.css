@@ -108,12 +108,14 @@
 @media (max-width: 768px) {
   .hero {
     min-height: 100vh;
-    padding-bottom: 80px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 2rem;
   }
 
   .hero-content {
-    padding: 0 2rem;
-    padding-top: 100px;
+    padding: 0;
     max-width: 100%;
   }
 
@@ -145,10 +147,12 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 0 1.5rem;
+  }
+
   .hero-content {
-    padding-top: 90px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 0;
   }
 
   .animal-image {
