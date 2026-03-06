@@ -14,7 +14,7 @@ const PAGES = {
   '/blog/sri-lankan-banking-thesis': {
     title: 'The Sri Lankan Banking Thesis: A Closer Look',
     description: 'Examining the viral investment thesis around HNB and COMB on the Colombo Stock Exchange — credit expansion, low multiples, and the case for patient capital.',
-    image: 'https://yasiru.elfbane.com/assets/hero.jpg',
+    image: 'https://yasiru.elfbane.com/assets/og-banking-thesis.jpg',
     type: 'article',
   },
 };
