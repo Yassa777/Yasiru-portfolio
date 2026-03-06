@@ -1,0 +1,26 @@
+# Yasiru's Portfolio
+
+> Macro-financial research & Sri Lankan markets
+
+This is the personal portfolio and research blog of Yasiru, a 21-year-old researcher based in Colombo, Sri Lanka. He works at the DAV Lab at University of Colombo building macro-financial models with Central Bank data.
+
+## Pages
+
+- Home: https://yasiru.elfbane.com/
+- About: https://yasiru.elfbane.com/about
+- Blog — The Sri Lankan Banking Thesis: https://yasiru.elfbane.com/blog/sri-lankan-banking-thesis
+
+## Blog Posts
+
+### The Sri Lankan Banking Thesis: A Closer Look
+URL: https://yasiru.elfbane.com/blog/sri-lankan-banking-thesis
+Category: Macroeconomics
+Date: March 2026
+
+An in-depth examination of the viral investment thesis around HNB and COMB on the Colombo Stock Exchange. Covers the credit cycle (net credit to private sector collapsing to -48B LKR in 2023, rebounding to 2.1T in 2025), the formalization thesis (CEFTS growing from 8% to 67% of transactions), NPL risks, CSE liquidity analysis, and valuation considerations. Includes original charts sourced from CBSL Annual Reports, EconomyNext, and CBSL Payments Bulletins.
+
+## Contact
+- Email: hello@yasiru.com
+- Twitter: https://twitter.com/yasiru
+- GitHub: https://github.com/yasiru
+- Google Scholar: https://scholar.google.com
