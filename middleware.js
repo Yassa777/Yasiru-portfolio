@@ -1,3 +1,5 @@
+import { next } from '@vercel/edge';
+
 const PAGES = {
   '/': {
     title: 'Yasiru — Macro-Financial Research & Sri Lankan Markets',
@@ -19,11 +21,14 @@ const PAGES = {
   },
 };
 
-const CRAWLER_UA = /linkedinbot|twitterbot|facebookexternalhit|slackbot|discordbot|telegrambot|whatsapp|googlebot|bingbot|yandexbot|duckduckbot/i;
+const CRAWLER_UA = /linkedinbot|twitterbot|facebookexternalhit|slackbot|discordbot|telegrambot|whatsapp/i;
 
 export default function middleware(request) {
   const ua = request.headers.get('user-agent') || '';
-  if (!CRAWLER_UA.test(ua)) return;
+
+  if (!CRAWLER_UA.test(ua)) {
+    return next();
+  }
 
   const url = new URL(request.url);
   const page = PAGES[url.pathname] || PAGES['/'];
