@@ -1,171 +1,272 @@
 .hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: flex-start;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--color-bg);
   overflow: hidden;
 }
 
-.hero-bg {
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 45%;
-  height: 100%;
-  z-index: 1;
-  opacity: 1;
-  will-change: transform;
+/* Left image */
+.hero-image-col {
+  position: relative;
+  overflow: hidden;
 }
 
-.newspaper-bg {
+.hero-feature-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  mask-image: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    transparent 100%
-  );
 }
 
-.hero-content {
-  position: relative;
-  z-index: 10;
-  padding-left: 4rem;
-  padding-top: 140px;
-  max-width: 500px;
-}
-
-.animal-image-container {
-  margin-bottom: 2rem;
-}
-
-.animal-image {
-  width: 200px;
-  height: auto;
-  object-fit: contain;
-}
-
-.text-content {
+/* Right content */
+.hero-content-col {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  justify-content: space-between;
+  padding: 7rem 4rem 3rem 5rem;
+  overflow-y: auto;
 }
 
-.topic {
-  font-size: 1.1rem;
-  line-height: 1.5;
+/* Intro block */
+.hero-intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+}
+
+.hero-name {
+  font-family: var(--font-sans);
+  font-size: 5.5rem;
+  font-weight: 300;
   color: var(--color-text);
-  margin: 0;
+  letter-spacing: -0.04em;
+  line-height: 1;
 }
 
-.tagline {
+.hero-line {
+  width: 60px;
+  height: 2px;
+  background: var(--color-accent);
+  margin: 2rem 0;
+}
+
+.hero-tagline {
+  font-family: var(--font-poly);
+  font-size: 1.05rem;
   font-style: italic;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: var(--color-text);
+  color: var(--color-text-light);
+  line-height: 1.8;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 1.2rem;
   margin-top: 1.5rem;
 }
 
-.plant-container {
-  position: absolute;
-  bottom: -5%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
-  will-change: transform;
+.social-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-light);
+  transition: color 0.2s ease;
 }
 
-.plant {
-  height: 70vh;
-  max-height: 600px;
-  width: auto;
-  object-fit: contain;
+.social-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .social-icon:hover {
+    color: var(--color-accent);
+  }
+}
+
+/* Recent work block */
+.hero-work {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+}
+
+.hero-work-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.hero-work-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--color-border);
+  background: white;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-work-card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.hero-work-arrow {
+  font-size: 1.4rem;
+  color: var(--color-text-light);
+  transition: color 0.25s ease, transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-work-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.08);
+  }
+
+  .hero-work-card:hover .hero-work-arrow {
+    color: var(--color-accent);
+    transform: translateX(4px);
+  }
+}
+
+.hero-work-category {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.hero-work-title {
+  font-family: var(--font-poly);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+}
+
+.hero-work-excerpt {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
+}
+
+.hero-work-date {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  color: var(--color-text-light);
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+}
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .hero-bg {
-    width: 55%;
-    right: -100px;
+  .hero-content-col {
+    padding: 6rem 3rem 2.5rem 3.5rem;
   }
 
-  .plant {
-    height: 50vh;
-  }
-
-  .animal-image {
-    width: 180px;
+  .hero-name {
+    font-size: 4rem;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .hero {
+    height: auto;
     min-height: 100vh;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 0 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 45vh auto;
   }
 
-  .hero-content {
-    padding: 0;
-    max-width: 100%;
+  .hero-image-col {
+    max-height: 45vh;
   }
 
-  .animal-image-container {
-    margin-bottom: 1.5rem;
+  .hero-content-col {
+    padding: 2.5rem 2rem 3rem;
+    gap: 2.5rem;
   }
 
-  .animal-image {
-    width: 160px;
+  .hero-name {
+    font-size: 3.2rem;
   }
 
-  .topic {
+  .hero-line {
+    margin: 1.5rem 0;
+  }
+
+  .hero-tagline {
     font-size: 1rem;
   }
 
-  .tagline {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin-top: 1rem;
-  }
-
-  .hero-bg {
-    display: none;
-  }
-
-  .plant-container {
-    display: none;
+  .hero-socials {
+    margin-top: 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding: 0 1.5rem;
+    grid-template-rows: 40vh auto;
   }
 
-  .hero-content {
-    padding: 0;
+  .hero-content-col {
+    padding: 2rem 1.5rem 2.5rem;
+    gap: 2rem;
   }
 
-  .animal-image {
-    width: 140px;
+  .hero-label {
+    font-size: 0.6rem;
+    margin-bottom: 1rem;
   }
 
-  .topic {
-    font-size: 0.95rem;
+  .hero-name {
+    font-size: 2.5rem;
   }
 
-  .tagline {
+  .hero-line {
+    width: 40px;
+    margin: 1.2rem 0;
+  }
+
+  .hero-tagline {
+    font-size: 0.92rem;
+  }
+
+  .hero-socials {
+    gap: 1rem;
+  }
+
+  .social-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero-work-title {
     font-size: 1rem;
-    line-height: 1.5;
   }
 
+  .hero-work-excerpt {
+    font-size: 0.78rem;
+  }
 }

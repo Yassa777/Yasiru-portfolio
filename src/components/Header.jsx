@@ -6,10 +6,9 @@ function Header() {
     <header className="header">
       <Link to="/" className="logo">yasiru.</Link>
       <nav className="nav">
-        <Link to="/" className="nav-link desktop-only">home</Link>
-        <a href="#publications" className="nav-link desktop-only">publications</a>
+        <Link to="/" className="nav-link">home</Link>
+        <Link to="/about" className="nav-link">about</Link>
         <Link to="/blog/sri-lankan-banking-thesis" className="nav-link">blog</Link>
-        <a href="#projects" className="nav-link">projects</a>
       </nav>
     </header>
   );

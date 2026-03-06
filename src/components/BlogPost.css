@@ -18,7 +18,7 @@
 }
 
 .blog-back:hover {
-  color: var(--color-gold);
+  color: var(--color-accent);
 }
 
 /* Header */
@@ -28,9 +28,11 @@
 
 .blog-category {
   display: inline-block;
-  font-size: 0.85rem;
-  font-style: italic;
-  color: var(--color-gold);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
   margin-bottom: 1rem;
 }
 
@@ -59,7 +61,7 @@
 }
 
 .blog-content a {
-  color: var(--color-gold);
+  color: var(--color-accent);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -110,7 +112,7 @@
 .blog-pullquote {
   margin: 2.5rem 0;
   padding: 1.5rem 0 1.5rem 2rem;
-  border-left: 3px solid var(--color-gold);
+  border-left: 3px solid var(--color-accent);
   font-size: 1.15rem;
   font-style: italic;
   line-height: 1.7;
@@ -141,7 +143,7 @@
   transform: translateY(-50%);
   width: 6px;
   height: 6px;
-  background: var(--color-gold);
+  background: var(--color-accent);
   border-radius: 50%;
 }
 
@@ -171,17 +173,10 @@
 /* Reading Progress - Desktop Side Panel */
 .reading-progress-panel {
   position: fixed;
-  left: 2rem;
+  left: 2.5rem;
   top: 50%;
   transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
   z-index: 10;
-  padding: 1.5rem 1.2rem;
-  background: var(--color-bg);
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .progress-track {
@@ -189,6 +184,7 @@
   width: 2px;
   height: 260px;
   background: rgba(0, 0, 0, 0.06);
+  margin-left: 4px;
 }
 
 .progress-fill {
@@ -196,22 +192,22 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--color-gold);
+  background: var(--color-accent);
   transition: height 0.15s ease-out;
 }
 
 .progress-node {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  margin-left: -5px;
 }
 
 .progress-dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.1);
   border: 2px solid var(--color-bg);
@@ -221,18 +217,17 @@
 }
 
 .progress-node.active .progress-dot {
-  background: var(--color-gold);
-  box-shadow: 0 0 0 1px var(--color-gold);
+  background: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent);
 }
 
 .progress-label {
-  position: absolute;
-  left: 1rem;
   white-space: nowrap;
   font-size: 0.72rem;
   color: rgba(0, 0, 0, 0.2);
   transition: color 0.3s ease;
   pointer-events: none;
+  margin-left: 0.75rem;
 }
 
 .progress-node.active .progress-label {
@@ -244,12 +239,14 @@
   color: var(--color-text-light);
   opacity: 0.5;
   font-variant-numeric: tabular-nums;
+  margin-top: 0.75rem;
+  margin-left: 0;
+  text-align: center;
 }
 
 @media (max-width: 1400px) {
   .reading-progress-panel {
     left: 0.75rem;
-    padding: 1.2rem 0.8rem;
   }
 
   .progress-label {
@@ -280,7 +277,7 @@
 
   .reading-progress-bar-fill {
     height: 100%;
-    background: var(--color-gold);
+    background: var(--color-accent);
     transition: width 0.15s ease-out;
   }
 }
@@ -308,11 +305,13 @@
 }
 
 .comments-title {
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: var(--color-gold);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
   margin-bottom: 1.5rem;
-  letter-spacing: 0.05em;
 }
 
 .comments-empty {
@@ -382,7 +381,7 @@
 
 .comment-input:focus,
 .comment-textarea:focus {
-  border-color: var(--color-gold);
+  border-color: var(--color-accent);
 }
 
 .comment-textarea {

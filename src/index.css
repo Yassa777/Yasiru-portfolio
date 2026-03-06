@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poly:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poly:ital@0;1&display=swap');
 
 * {
   margin: 0;
@@ -7,11 +7,14 @@
 }
 
 :root {
-  --color-gold: #b8963e;
-  --color-text: #1a1a1a;
-  --color-text-light: #666;
-  --color-bg: #f7f5f0;
-  --color-bg-alt: #efece6;
+  --color-accent: #3b82f6;
+  --color-accent-light: rgba(59, 130, 246, 0.08);
+  --color-text: #111;
+  --color-text-light: #888;
+  --color-bg: #fafafa;
+  --color-bg-alt: #f0f0f0;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --font-sans: 'Inter', -apple-system, sans-serif;
   --font-poly: 'Poly', serif;
 }
 
@@ -20,7 +23,7 @@ html {
 }
 
 body {
-  font-family: var(--font-poly);
+  font-family: var(--font-sans);
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
@@ -35,18 +38,16 @@ a {
 }
 
 ::selection {
-  background-color: var(--color-gold);
+  background-color: var(--color-accent);
   color: white;
 }
 
-/* Touch-friendly improvements */
 @media (hover: none) and (pointer: coarse) {
   a, button {
-    -webkit-tap-highlight-color: rgba(184, 150, 62, 0.2);
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.15);
   }
 }
 
-/* Prevent zoom on input focus on iOS */
 @supports (-webkit-touch-callout: none) {
   input, textarea, select {
     font-size: 16px;
