@@ -131,14 +131,14 @@ function CseTurnoverChart() {
       ctx.lineTo(toX(cseTurnoverData.length - 1), pad.top + chartH);
       ctx.closePath();
       const grad = ctx.createLinearGradient(0, pad.top, 0, pad.top + chartH);
-      grad.addColorStop(0, 'rgba(184, 150, 62, 0.25)');
-      grad.addColorStop(1, 'rgba(184, 150, 62, 0.02)');
+      grad.addColorStop(0, 'rgba(220, 53, 69, 0.25)');
+      grad.addColorStop(1, 'rgba(220, 53, 69, 0.02)');
       ctx.fillStyle = grad;
       ctx.fill();
 
       // Line
-      ctx.strokeStyle = '#b8963e';
-      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = '#dc3545';
+      ctx.lineWidth = 3;
       ctx.lineJoin = 'round';
       ctx.lineCap = 'round';
       ctx.beginPath();
@@ -155,10 +155,13 @@ function CseTurnoverChart() {
         const x = toX(i);
         const y = toY(d.value);
 
-        ctx.fillStyle = '#b8963e';
+        ctx.fillStyle = '#dc3545';
         ctx.beginPath();
-        ctx.arc(x, y, 4, 0, Math.PI * 2);
+        ctx.arc(x, y, 5, 0, Math.PI * 2);
         ctx.fill();
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2;
+        ctx.stroke();
 
         // Value label on peak years
         if (d.value === Math.max(...values) || d.year === '2021') {
@@ -191,10 +194,12 @@ function CseTurnoverChart() {
   }, []);
 
   return (
-    <div className="credit-chart-wrapper">
-      <canvas ref={canvasRef} className="credit-chart-canvas" />
+    <>
+      <div className="credit-chart-wrapper">
+        <canvas ref={canvasRef} className="credit-chart-canvas" />
+      </div>
       <p className="chart-source">Sources: CSE Annual Reports (2020, 2021, 2023), CEIC, EconomyNext, Xinhua. 2018, 2022 estimated from CSE comparative data.</p>
-    </div>
+    </>
   );
 }
 
@@ -273,7 +278,7 @@ function CreditChart() {
         const valY = toY(d.value);
 
         const isNeg = d.value < 0;
-        ctx.fillStyle = isNeg ? 'rgba(180, 60, 60, 0.7)' : 'rgba(184, 150, 62, 0.65)';
+        ctx.fillStyle = isNeg ? 'rgba(180, 180, 180, 0.5)' : 'rgba(220, 53, 69, 0.25)';
 
         if (isNeg) {
           ctx.fillRect(x - barWidth / 2, zeroY, barWidth, valY - zeroY);
@@ -290,8 +295,8 @@ function CreditChart() {
       });
 
       // Line
-      ctx.strokeStyle = 'var(--color-gold)';
-      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = '#dc3545';
+      ctx.lineWidth = 3;
       ctx.lineJoin = 'round';
       ctx.lineCap = 'round';
       ctx.beginPath();
@@ -307,10 +312,13 @@ function CreditChart() {
       creditData.forEach((d, i) => {
         const x = toX(i);
         const y = toY(d.value);
-        ctx.fillStyle = d.value < 0 ? 'rgba(180, 60, 60, 0.9)' : '#b8963e';
+        ctx.fillStyle = d.value < 0 ? '#999' : '#dc3545';
         ctx.beginPath();
-        ctx.arc(x, y, 4, 0, Math.PI * 2);
+        ctx.arc(x, y, 5, 0, Math.PI * 2);
         ctx.fill();
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2;
+        ctx.stroke();
       });
 
       // Title
@@ -327,10 +335,12 @@ function CreditChart() {
   }, []);
 
   return (
-    <div className="credit-chart-wrapper">
-      <canvas ref={canvasRef} className="credit-chart-canvas" />
+    <>
+      <div className="credit-chart-wrapper">
+        <canvas ref={canvasRef} className="credit-chart-canvas" />
+      </div>
       <p className="chart-source">Sources: CBSL Annual Reports, EconomyNext, MacroColombo. 2017-2020 derived from CBSL growth rates and IMF data.</p>
-    </div>
+    </>
   );
 }
 
@@ -365,7 +375,6 @@ function CeftsChart() {
 
       const xStep = chartW / (ceftsData.length - 1);
       const toX = (i) => pad.left + i * xStep;
-      const toYVol = (v) => pad.top + chartH - (v / maxVol) * chartH;
       const toYVal = (v) => pad.top + chartH - (v / maxVal) * chartH;
 
       // Grid lines
@@ -380,7 +389,7 @@ function CeftsChart() {
         ctx.stroke();
 
         // Left axis (volume)
-        ctx.fillStyle = 'rgba(184, 150, 62, 0.8)';
+        ctx.fillStyle = '#999';
         ctx.font = `${fontSize}px Poly, serif`;
         ctx.textAlign = 'right';
         ctx.textBaseline = 'middle';
@@ -388,7 +397,7 @@ function CeftsChart() {
         ctx.fillText(`${volLabel}M`, pad.left - 8, y);
 
         // Right axis (value)
-        ctx.fillStyle = 'rgba(100, 150, 180, 0.8)';
+        ctx.fillStyle = '#c0392b';
         ctx.textAlign = 'left';
         const valLabel = ((maxVal / 5) * i).toFixed(1);
         ctx.fillText(`${valLabel}T`, w - pad.right + 8, y);
@@ -399,7 +408,7 @@ function CeftsChart() {
       ceftsData.forEach((d, i) => {
         const x = toX(i);
         const barH = (d.volume / maxVol) * chartH;
-        ctx.fillStyle = 'rgba(184, 150, 62, 0.5)';
+        ctx.fillStyle = 'rgba(220, 53, 69, 0.25)';
         ctx.fillRect(x - barWidth / 2, pad.top + chartH - barH, barWidth, barH);
 
         // X labels
@@ -411,8 +420,8 @@ function CeftsChart() {
       });
 
       // Line (value)
-      ctx.strokeStyle = 'rgba(100, 150, 180, 0.9)';
-      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = '#dc3545';
+      ctx.lineWidth = 3;
       ctx.lineJoin = 'round';
       ctx.lineCap = 'round';
       ctx.beginPath();
@@ -428,10 +437,13 @@ function CeftsChart() {
       ceftsData.forEach((d, i) => {
         const x = toX(i);
         const y = toYVal(d.value);
-        ctx.fillStyle = 'rgba(100, 150, 180, 1)';
+        ctx.fillStyle = '#dc3545';
         ctx.beginPath();
-        ctx.arc(x, y, 4, 0, Math.PI * 2);
+        ctx.arc(x, y, 5, 0, Math.PI * 2);
         ctx.fill();
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2;
+        ctx.stroke();
       });
 
       // Title
@@ -446,7 +458,7 @@ function CeftsChart() {
       const legFontSize = Math.max(9, Math.min(11, w * 0.022));
       ctx.font = `${legFontSize}px Poly, serif`;
 
-      ctx.fillStyle = 'rgba(184, 150, 62, 0.5)';
+      ctx.fillStyle = 'rgba(220, 53, 69, 0.25)';
       ctx.fillRect(pad.left, legY - 5, 12, 10);
       ctx.fillStyle = '#999';
       ctx.textAlign = 'left';
@@ -454,7 +466,7 @@ function CeftsChart() {
       ctx.fillText('Volume (millions)', pad.left + 16, legY);
 
       const lineX = pad.left + 120;
-      ctx.strokeStyle = 'rgba(100, 150, 180, 0.9)';
+      ctx.strokeStyle = '#dc3545';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(lineX, legY);
@@ -470,10 +482,12 @@ function CeftsChart() {
   }, []);
 
   return (
-    <div className="credit-chart-wrapper">
-      <canvas ref={canvasRef} className="credit-chart-canvas" />
+    <>
+      <div className="credit-chart-wrapper">
+        <canvas ref={canvasRef} className="credit-chart-canvas" />
+      </div>
       <p className="chart-source">Sources: CBSL Payments Bulletin Q4 2024, CBSL Information Series Note (Feb 2025). 2024 endpoints confirmed: 203M transactions, Rs 17T value. Intermediate years estimated from CBSL annual reports.</p>
-    </div>
+    </>
   );
 }
 
@@ -679,7 +693,7 @@ function BlogPost() {
           <p>
             The first is about transaction volume. Most daily transactions in Sri Lanka still happen in
             physical currency. Your grandmother buying vegetables at the {'\u0DC0\u0DD9\u0DC5\u0DAF\u0DB4\u0DDC\u0DC5'}. A three-wheeler
-            fare paid in coins. A mason collecting his daily wage in a brown envelope. By sheer count,
+            fare paid in cash. A mason collecting his daily wage in a brown envelope. By sheer count,
             this is still broadly true. Though it's eroding faster than most people realize.
           </p>
 

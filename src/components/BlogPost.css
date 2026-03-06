@@ -148,7 +148,7 @@
 /* Credit Chart */
 .credit-chart-wrapper {
   margin: 2.5rem 0;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1rem;
   background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -160,11 +160,11 @@
 }
 
 .chart-source {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: var(--color-text-light);
-  opacity: 0.5;
+  opacity: 0.4;
   text-align: right;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   font-style: italic;
 }
 
