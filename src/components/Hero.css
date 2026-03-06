@@ -110,13 +110,11 @@
 .hero-work-card {
   display: block;
   text-decoration: none;
-  color: inherit;
-  padding: 1.5rem 1.6rem;
-  border-radius: 12px;
-  background: white;
-  border-left: 3px solid var(--color-accent);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  color: white;
+  padding: 1.6rem 1.8rem;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease;
 }
 
 .hero-work-card-inner {
@@ -127,7 +125,7 @@
 }
 
 .hero-work-arrow {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--color-accent);
   transition: transform 0.3s ease;
   flex-shrink: 0;
@@ -135,8 +133,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .hero-work-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.12);
+    border-color: var(--color-accent);
   }
 
   .hero-work-card:hover .hero-work-arrow {
@@ -147,7 +144,7 @@
 .hero-work-category {
   font-family: var(--font-sans);
   font-size: 0.6rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-accent);
   display: block;
@@ -159,15 +156,15 @@
   font-size: 1.15rem;
   font-weight: 400;
   line-height: 1.4;
-  color: var(--color-text);
+  color: white;
   margin-bottom: 0.5rem;
 }
 
 .hero-work-excerpt {
   font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 300;
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1.65;
   margin-bottom: 0.5rem;
 }
@@ -175,8 +172,7 @@
 .hero-work-date {
   font-family: var(--font-sans);
   font-size: 0.65rem;
-  color: var(--color-text-light);
-  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.3);
   letter-spacing: 0.05em;
 }
 
@@ -198,6 +194,7 @@
     min-height: 100vh;
     grid-template-columns: 1fr;
     grid-template-rows: 45vh auto;
+    padding-top: 3.2rem;
   }
 
   .hero-image-col {
