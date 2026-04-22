@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import BlogPost from './components/BlogPost';
+import ForecastingReservesPost from './components/ForecastingReservesPost';
 import './App.css';
 
 function ScrollToTop() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<Hero />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog/sri-lankan-banking-thesis" element={<BlogPost />} />
+            <Route path="/blog/forecasting-foreign-reserves" element={<ForecastingReservesPost />} />
           </Routes>
         </main>
       </div>

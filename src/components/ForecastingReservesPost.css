@@ -1,0 +1,332 @@
+/* Cover image hero */
+.post-cover {
+  margin: 0 0 3rem;
+  padding: 0;
+}
+
+.post-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+}
+
+.post-cover figcaption {
+  font-family: var(--font-poly), serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--color-text-light);
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 0.85rem;
+}
+
+.blog-coauthor {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* Headline stat row */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.stat-card {
+  padding: 1.1rem 0.85rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 2px solid rgba(58, 93, 143, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+}
+
+.stat-card.crisis {
+  border-left-color: #aa3232;
+}
+
+.stat-card.accent {
+  border-left-color: var(--color-accent);
+  background: rgba(220, 53, 69, 0.04);
+}
+
+.stat-num {
+  font-family: var(--font-poly), serif;
+  font-size: 1.45rem;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--color-text-light);
+  opacity: 0.75;
+  line-height: 1.35;
+}
+
+/* Reserves & BoP & RMSE chart sizing */
+.reserves-chart-canvas {
+  width: 100%;
+  height: 360px;
+  display: block;
+}
+
+.reserves-chart-canvas.tall {
+  height: 380px;
+}
+
+/* Model family grid */
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  margin: 2rem 0;
+}
+
+.family-card {
+  padding: 1.1rem 1rem;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.family-card h4 {
+  font-family: var(--font-poly), serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: 0.55rem 0 0.5rem;
+}
+
+.family-card p {
+  font-size: 0.85rem !important;
+  line-height: 1.55 !important;
+  color: var(--color-text-light) !important;
+  margin: 0 !important;
+  opacity: 0.85;
+}
+
+.family-tag {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  color: #fff;
+  display: inline-block;
+}
+
+.family-tag.classical { background: #9aa6b8; }
+.family-tag.shrinkage { background: #7d96b8; }
+.family-tag.regime { background: #3a5d8f; }
+.family-tag.ml { background: #c98a2c; }
+
+/* Architecture vs information decomp */
+.effect-decomp {
+  margin: 2rem 0 2.5rem;
+  padding: 1.4rem 1.2rem 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.effect-row {
+  display: grid;
+  grid-template-columns: 180px 1fr 110px;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.95rem;
+}
+
+.effect-label {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.35;
+}
+
+.effect-label em {
+  display: block;
+  font-style: italic;
+  font-size: 0.72rem;
+  color: var(--color-text-light);
+  opacity: 0.7;
+  margin-top: 0.15rem;
+}
+
+.effect-bar-track {
+  height: 14px;
+  background: rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.effect-bar {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+.effect-bar.arch { background: #3a5d8f; }
+.effect-bar.info { background: #c98a2c; opacity: 0.6; }
+
+.effect-value {
+  font-family: var(--font-poly), serif;
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  text-align: right;
+}
+
+.effect-value.muted {
+  color: var(--color-text-light);
+  opacity: 0.7;
+  font-size: 0.78rem;
+}
+
+.decomp-source {
+  margin-top: 0.4rem !important;
+}
+
+/* Caveat grid */
+.caveat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.caveat-card {
+  padding: 1.1rem 1rem;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 2px solid var(--color-accent);
+}
+
+.caveat-card h4 {
+  font-family: var(--font-poly), serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: 0.45rem 0 0.45rem;
+}
+
+.caveat-card p {
+  font-size: 0.85rem !important;
+  line-height: 1.55 !important;
+  color: var(--color-text-light) !important;
+  margin: 0 !important;
+  opacity: 0.85;
+}
+
+.caveat-tag {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+}
+
+/* Paper card */
+.paper-card {
+  margin: 2.5rem 0 1rem;
+  padding: 1.6rem 1.4rem;
+  background: rgba(58, 93, 143, 0.05);
+  border: 1px solid rgba(58, 93, 143, 0.2);
+  border-left: 3px solid #3a5d8f;
+}
+
+.paper-card-tag {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #3a5d8f;
+  margin-bottom: 0.6rem;
+}
+
+.paper-card-title {
+  font-family: var(--font-poly), serif;
+  font-size: 1.05rem !important;
+  line-height: 1.45 !important;
+  color: var(--color-text) !important;
+  margin: 0 0 0.5rem !important;
+}
+
+.paper-card-meta {
+  font-size: 0.85rem !important;
+  color: var(--color-text-light) !important;
+  opacity: 0.8;
+  margin: 0 0 0.85rem !important;
+  font-style: italic;
+}
+
+.paper-card-link {
+  font-family: var(--font-poly), serif;
+  font-size: 0.9rem;
+  color: var(--color-accent) !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .stat-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .family-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .caveat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reserves-chart-canvas {
+    height: 300px;
+  }
+
+  .reserves-chart-canvas.tall {
+    height: 340px;
+  }
+
+  .effect-row {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .effect-value {
+    text-align: left;
+  }
+
+  .post-cover {
+    margin: 0 -0.5rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-num {
+    font-size: 1.2rem;
+  }
+
+  .stat-card {
+    padding: 0.85rem 0.7rem;
+  }
+
+  .reserves-chart-canvas {
+    height: 260px;
+  }
+
+  .reserves-chart-canvas.tall {
+    height: 320px;
+  }
+
+  .paper-card {
+    padding: 1.2rem 1rem;
+  }
+}

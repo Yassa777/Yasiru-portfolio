@@ -18,6 +18,15 @@ const socials = [
 
 const works = [
   {
+    id: 2,
+    category: 'research / forecasting',
+    title: 'Forecasting Foreign Reserves Under a Sovereign Default: What Worked',
+    excerpt:
+      'Regime-switching models cut RMSE by 76.7% over a random walk on Sri Lankan reserves — and architecture beats more data.',
+    date: 'April 2026',
+    link: '/blog/forecasting-foreign-reserves',
+  },
+  {
     id: 1,
     category: 'macroeconomics',
     title: 'The Sri Lankan Banking Thesis: A Closer Look',
