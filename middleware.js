@@ -19,6 +19,12 @@ const PAGES = {
     image: 'https://yasiru.elfbane.com/assets/og-banking-thesis.jpg',
     type: 'article',
   },
+  '/blog/forecasting-foreign-reserves': {
+    title: 'Forecasting Foreign Reserves Under a Sovereign Default: What Worked',
+    description: 'A like-for-like comparison of classical, Bayesian, regime-switching, and machine-learning models on Sri Lankan reserves — MS-VAR cuts RMSE by 76.7% over a random walk, and architecture beats more data.',
+    image: 'https://yasiru.elfbane.com/assets/og-forecasting-reserves.jpg',
+    type: 'article',
+  },
 };
 
 const CRAWLER_UA = /linkedinbot|twitterbot|facebookexternalhit|slackbot|discordbot|telegrambot|whatsapp/i;
