@@ -8,7 +8,7 @@ function Header() {
       <nav className="nav">
         <Link to="/" className="nav-link">home</Link>
         <Link to="/about" className="nav-link">about</Link>
-        <Link to="/blog/sri-lankan-banking-thesis" className="nav-link">blog</Link>
+        <Link to="/blog/building-slepi" className="nav-link">blog</Link>
       </nav>
     </header>
   );

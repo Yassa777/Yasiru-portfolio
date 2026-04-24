@@ -29,6 +29,14 @@ const PAGES = {
     authors: ['Yasiru', 'Samantha Mathara Aracchi'],
     publishedTime: '2026-04-22T09:00:00+05:30',
   },
+  '/blog/building-slepi': {
+    title: 'How and Why I Built SLEPI',
+    description: 'A first-person build note on turning CBSL external-sector releases into a live Sri Lanka External Pressure Index with freshness logic, backfilled history, and object-storage publishing.',
+    image: 'https://yasiru.elfbane.com/assets/slepi-cover.svg',
+    type: 'article',
+    authors: ['Yasiru'],
+    publishedTime: '2026-04-23T09:00:00+05:30',
+  },
 };
 
 const CRAWLER_UA = /linkedinbot|twitterbot|facebookexternalhit|slackbot|discordbot|telegrambot|whatsapp/i;

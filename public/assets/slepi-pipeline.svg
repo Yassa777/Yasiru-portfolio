@@ -1,0 +1,69 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.07"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="36" flood-color="#B97C50" flood-opacity="0.16"/>
+    </filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6E4C7"/>
+      <stop offset="0.55" stop-color="#F8E6D4"/>
+      <stop offset="1" stop-color="#E6F2EE"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <ellipse cx="1240" cy="190" rx="300" ry="180" fill="#F39B6D" opacity="0.32"/>
+  <ellipse cx="310" cy="760" rx="340" ry="210" fill="#A6CDD0" opacity="0.28"/>
+  <ellipse cx="610" cy="280" rx="420" ry="260" fill="#F1C065" opacity="0.28"/>
+
+  <g filter="url(#shadow)">
+    <rect x="136" y="350" width="260" height="210" rx="30" fill="rgba(255,251,247,0.86)" stroke="rgba(98,67,44,0.16)" stroke-width="2"/>
+    <rect x="462" y="350" width="260" height="210" rx="30" fill="rgba(255,251,247,0.86)" stroke="rgba(98,67,44,0.16)" stroke-width="2"/>
+    <rect x="788" y="350" width="260" height="210" rx="30" fill="rgba(255,251,247,0.86)" stroke="rgba(98,67,44,0.16)" stroke-width="2"/>
+    <rect x="1114" y="350" width="260" height="210" rx="30" fill="rgba(255,251,247,0.86)" stroke="rgba(98,67,44,0.16)" stroke-width="2"/>
+  </g>
+
+  <g opacity="0.4" stroke="#FFF8F0" stroke-width="6">
+    <path d="M300 660C420 756 560 788 704 736C846 684 946 563 1100 598"/>
+    <path d="M246 278C366 238 498 248 626 308C760 372 852 472 982 498"/>
+  </g>
+
+  <g stroke="#C36B51" stroke-width="4" stroke-linecap="round">
+    <path d="M396 455H462"/>
+    <path d="M722 455H788"/>
+    <path d="M1048 455H1114"/>
+  </g>
+
+  <g fill="#8BB8BF">
+    <circle cx="396" cy="455" r="8"/>
+    <circle cx="722" cy="455" r="8"/>
+    <circle cx="1048" cy="455" r="8"/>
+  </g>
+
+  <g fill="#2D221D">
+    <text x="174" y="402" font-family="Inter, Arial, sans-serif" font-size="18" letter-spacing="4" opacity="0.58">01</text>
+    <text x="500" y="402" font-family="Inter, Arial, sans-serif" font-size="18" letter-spacing="4" opacity="0.58">02</text>
+    <text x="826" y="402" font-family="Inter, Arial, sans-serif" font-size="18" letter-spacing="4" opacity="0.58">03</text>
+    <text x="1152" y="402" font-family="Inter, Arial, sans-serif" font-size="18" letter-spacing="4" opacity="0.58">04</text>
+
+    <text x="174" y="448" font-family="Georgia, 'Times New Roman', serif" font-size="44">Discover</text>
+    <text x="500" y="448" font-family="Georgia, 'Times New Roman', serif" font-size="44">Cache</text>
+    <text x="826" y="448" font-family="Georgia, 'Times New Roman', serif" font-size="44">Rebuild</text>
+    <text x="1152" y="448" font-family="Georgia, 'Times New Roman', serif" font-size="44">Publish</text>
+
+    <text x="174" y="494" font-family="Inter, Arial, sans-serif" font-size="24" opacity="0.72">Live CBSL workbook URLs</text>
+    <text x="500" y="494" font-family="Inter, Arial, sans-serif" font-size="24" opacity="0.72">Raw files + source metadata</text>
+    <text x="826" y="494" font-family="Inter, Arial, sans-serif" font-size="24" opacity="0.72">Panel, snapshot, freshness note</text>
+    <text x="1152" y="494" font-family="Inter, Arial, sans-serif" font-size="24" opacity="0.72">Object storage or local fallback</text>
+  </g>
+
+  <g filter="url(#grain)">
+    <rect width="1600" height="1000" fill="#000"/>
+  </g>
+</svg>

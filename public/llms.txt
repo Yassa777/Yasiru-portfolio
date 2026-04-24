@@ -9,6 +9,8 @@ This is the personal portfolio and research blog of Yasiru, a 21-year-old resear
 - Home: https://yasiru.elfbane.com/
 - About: https://yasiru.elfbane.com/about
 - Blog — The Sri Lankan Banking Thesis: https://yasiru.elfbane.com/blog/sri-lankan-banking-thesis
+- Blog — Forecasting Foreign Reserves Under a Sovereign Default: https://yasiru.elfbane.com/blog/forecasting-foreign-reserves
+- Blog — How and Why I Built SLEPI: https://yasiru.elfbane.com/blog/building-slepi
 
 ## Blog Posts
 
@@ -18,6 +20,20 @@ Category: Macroeconomics
 Date: March 2026
 
 An in-depth examination of the viral investment thesis around HNB and COMB on the Colombo Stock Exchange. Covers the credit cycle (net credit to private sector collapsing to -48B LKR in 2023, rebounding to 2.1T in 2025), the formalization thesis (CEFTS growing from 8% to 67% of transactions), NPL risks, CSE liquidity analysis, and valuation considerations. Includes original charts sourced from CBSL Annual Reports, EconomyNext, and CBSL Payments Bulletins.
+
+### Forecasting Foreign Reserves Under a Sovereign Default: What Worked
+URL: https://yasiru.elfbane.com/blog/forecasting-foreign-reserves
+Category: Research / Forecasting
+Date: April 2026
+
+A long-form research post on forecasting Sri Lankan foreign reserves through the sovereign-default period. Compares classical, Bayesian, regime-switching, and machine-learning models on a like-for-like basis, and argues that regime-aware model architecture matters more than simply adding more data. Includes original reserve, balance-of-payments, and RMSE visualizations.
+
+### How and Why I Built SLEPI
+URL: https://yasiru.elfbane.com/blog/building-slepi
+Category: Macro Systems / Data
+Date: April 2026
+
+A build essay on the Sri Lanka External Pressure Index. Explains the four-block index design, why freshness logic matters when CBSL releases arrive on different calendars, how the pipeline discovers and rebuilds live source files, and why the adjusted headline series removes remittances and tourism from the external-balance block before scoring.
 
 ## Contact
 - Email: hello@yasiru.com

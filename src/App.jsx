@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import BlogPost from './components/BlogPost';
 import ForecastingReservesPost from './components/ForecastingReservesPost';
+import SlepiPost from './components/SlepiPost';
 import './App.css';
 
 function ScrollToTop() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blog/sri-lankan-banking-thesis" element={<BlogPost />} />
             <Route path="/blog/forecasting-foreign-reserves" element={<ForecastingReservesPost />} />
+            <Route path="/blog/building-slepi" element={<SlepiPost />} />
           </Routes>
         </main>
       </div>

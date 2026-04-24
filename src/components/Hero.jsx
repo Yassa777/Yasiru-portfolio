@@ -18,6 +18,15 @@ const socials = [
 
 const works = [
   {
+    id: 3,
+    category: 'macro systems / data',
+    title: 'How and Why I Built SLEPI',
+    excerpt:
+      'Building a live external-pressure index from CBSL workbooks, release lags, backfilled history, and a daily refresh pipeline.',
+    date: 'April 2026',
+    link: '/blog/building-slepi',
+  },
+  {
     id: 2,
     category: 'research / forecasting',
     title: 'Forecasting Foreign Reserves Under a Sovereign Default: What Worked',
