@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import './BlogPost.css';
 import './SlepiPost.css';
 import {
+  slepiCascadeStages,
   slepiMethodMetrics,
   slepiMethodNotes,
   slepiMoments,
@@ -16,6 +17,7 @@ import {
 const sections = [
   { id: 'intro', label: 'Why build it' },
   { id: 'design', label: 'Design problem' },
+  { id: 'cascade', label: 'Stress cascade' },
   { id: 'pipeline', label: 'Pipeline' },
   { id: 'freshness', label: 'Freshness' },
   { id: 'signal', label: 'Signal' },
@@ -64,6 +66,114 @@ function buildAreaPath(points, baselineY) {
     .slice(1)
     .map((point) => `L${point.x},${point.y}`)
     .join(' ')} L${last.x},${baselineY} Z`;
+}
+
+function usePrefersReducedMotion() {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return undefined;
+
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => setPrefersReducedMotion(media.matches);
+    update();
+
+    if (media.addEventListener) {
+      media.addEventListener('change', update);
+      return () => media.removeEventListener('change', update);
+    }
+
+    media.addListener(update);
+    return () => media.removeListener(update);
+  }, []);
+
+  return prefersReducedMotion;
+}
+
+function CascadeIcon({ id }) {
+  if (id === 'shock') {
+    return (
+      <svg viewBox="0 0 72 72" className="cascade-icon-svg" aria-hidden="true">
+        <circle className="cascade-orb cascade-orb-a" cx="22" cy="24" r="7" />
+        <circle className="cascade-orb cascade-orb-b" cx="50" cy="21" r="6" />
+        <path className="cascade-droplet" d="M36 15C42 24 45 29 45 34C45 40.0751 40.0751 45 34 45C27.9249 45 23 40.0751 23 34C23 29.5 25.8 24.5 36 15Z" />
+        <path className="cascade-shock-line" d="M12 53C20 47 29 45 37 49C43 52 49 53 60 48" />
+      </svg>
+    );
+  }
+
+  if (id === 'current-account') {
+    return (
+      <svg viewBox="0 0 72 72" className="cascade-icon-svg" aria-hidden="true">
+        <rect className="cascade-ledger" x="15" y="18" width="42" height="36" rx="10" />
+        <path className="cascade-flow-in" d="M24 29H41M36 24L41 29L36 34" />
+        <path className="cascade-flow-out" d="M48 43H31M36 38L31 43L36 48" />
+        <line className="cascade-ledger-line" x1="25" y1="36" x2="47" y2="36" />
+      </svg>
+    );
+  }
+
+  if (id === 'reserves') {
+    return (
+      <svg viewBox="0 0 72 72" className="cascade-icon-svg" aria-hidden="true">
+        <rect className="cascade-tank" x="19" y="12" width="34" height="46" rx="12" />
+        <path className="cascade-tank-fill" d="M25 28C31 31 35 31 41 28C45 26 48 26 47 27V52H25V28Z" />
+        <path className="cascade-tank-level" d="M25 28C31 31 35 31 41 28C45 26 48 26 47 27" />
+      </svg>
+    );
+  }
+
+  if (id === 'currency') {
+    return (
+      <svg viewBox="0 0 72 72" className="cascade-icon-svg" aria-hidden="true">
+        <path className="cascade-rate-frame" d="M14 19H58V53H14" />
+        <path className="cascade-rate-line" d="M19 29L31 27L42 33L53 46" />
+        <path className="cascade-rate-fall" d="M49 41L53 46L58 38" />
+      </svg>
+    );
+  }
+
+  if (id === 'inflation') {
+    return (
+      <svg viewBox="0 0 72 72" className="cascade-icon-svg" aria-hidden="true">
+        <rect className="cascade-box cascade-box-a" x="13" y="26" width="14" height="18" rx="4" />
+        <rect className="cascade-box cascade-box-b" x="29" y="22" width="14" height="22" rx="4" />
+        <rect className="cascade-box cascade-box-c" x="45" y="17" width="14" height="27" rx="4" />
+        <path className="cascade-price-arrow" d="M34 57V45M34 45L29 50M34 45L39 50" />
+      </svg>
+    );
+  }
+
+  if (id === 'debt') {
+    return (
+      <svg viewBox="0 0 72 72" className="cascade-icon-svg" aria-hidden="true">
+        <rect className="cascade-debt-shadow" x="24" y="18" width="28" height="34" rx="8" />
+        <rect className="cascade-debt-body" x="18" y="18" width="28" height="34" rx="8" />
+        <path className="cascade-debt-lines" d="M24 29H40M24 36H35M24 43H38" />
+        <path className="cascade-debt-arrow" d="M55 47V25M55 25L49 31M55 25L61 31" />
+      </svg>
+    );
+  }
+
+  if (id === 'risk') {
+    return (
+      <svg viewBox="0 0 72 72" className="cascade-icon-svg" aria-hidden="true">
+        <path className="cascade-spread-base" d="M15 52H57" />
+        <path className="cascade-spread-left" d="M23 52L31 27" />
+        <path className="cascade-spread-right" d="M49 52L41 20" />
+        <circle className="cascade-spread-dot" cx="31" cy="27" r="4" />
+        <circle className="cascade-spread-dot" cx="41" cy="20" r="4" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 72 72" className="cascade-icon-svg" aria-hidden="true">
+      <path className="cascade-pipe-body" d="M13 26H34C41 26 41 46 48 46H59" />
+      <path className="cascade-pipe-neck" d="M31 26C38 26 38 46 45 46" />
+      <path className="cascade-pipe-arrow" d="M48 36H60M55 31L60 36L55 41" />
+    </svg>
+  );
 }
 
 function ReadingProgress({ contentRef }) {
@@ -454,6 +564,101 @@ function MethodBars() {
   );
 }
 
+function StressCascadeLoop() {
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const activeStage = slepiCascadeStages[activeIndex];
+  const progress = (activeIndex / (slepiCascadeStages.length - 1)) * 100;
+
+  useEffect(() => {
+    if (prefersReducedMotion || paused) return undefined;
+
+    const intervalId = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % slepiCascadeStages.length);
+    }, 1900);
+
+    return () => window.clearInterval(intervalId);
+  }, [paused, prefersReducedMotion]);
+
+  const handlePick = (index) => {
+    setActiveIndex(index);
+    setPaused(true);
+  };
+
+  return (
+    <div className="slepi-chart-card cascade-card">
+      <div className="slepi-chart-header">
+        <div>
+          <span className="slepi-kicker">Transmission loop</span>
+          <h3>How an external shock typically propagates through the economy</h3>
+        </div>
+        <div className="slepi-mini-stat">
+          <span className="slepi-mini-label">Current frame</span>
+          <strong>{String(activeIndex + 1).padStart(2, '0')}</strong>
+          <span>{activeStage.act}</span>
+        </div>
+      </div>
+
+      <p className="cascade-intro">
+        This is the stylized chain I have in mind when I say external stress can travel far beyond the balance of payments. Hover or click any node to hold the loop on that stage.
+      </p>
+
+      <div
+        className="cascade-shell"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        <div className="cascade-spine" aria-hidden="true">
+          <div className="cascade-progress" style={{ height: `${progress}%` }} />
+          <div className="cascade-pulse" style={{ top: `${progress}%` }} />
+        </div>
+
+        <div className="cascade-stages">
+          {slepiCascadeStages.map((stage, index) => {
+            const state = index === activeIndex ? 'active' : index < activeIndex ? 'passed' : 'pending';
+            return (
+              <button
+                key={stage.id}
+                type="button"
+                className={`cascade-stage ${state}`}
+                style={{ '--cascade-accent': stage.accent }}
+                onMouseEnter={() => handlePick(index)}
+                onFocus={() => handlePick(index)}
+                onClick={() => handlePick(index)}
+              >
+                <span className="cascade-stage-index">{String(index + 1).padStart(2, '0')}</span>
+                <div className="cascade-stage-icon">
+                  <CascadeIcon id={stage.id} />
+                </div>
+                <div className="cascade-stage-copy">
+                  <span className="cascade-stage-act">{stage.act}</span>
+                  <strong>{stage.title}</strong>
+                  <span>{stage.label}</span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="cascade-detail" style={{ '--cascade-accent': activeStage.accent }}>
+        <span className="cascade-detail-tag">{activeStage.act}</span>
+        <h4>{activeStage.title}</h4>
+        <p>{activeStage.detail}</p>
+        <div className="cascade-detail-effect">
+          <span>Pressure effect</span>
+          <strong>{activeStage.effect}</strong>
+        </div>
+      </div>
+
+      <p className="chart-source">
+        Stylized mechanism loop only. Real episodes can overlap, skip steps, or move faster, but this ordering is the core logic behind why external stress can keep compounding.
+      </p>
+    </div>
+  );
+}
+
 function SlepiPost() {
   const articleRef = useRef(null);
 
@@ -536,6 +741,17 @@ function SlepiPost() {
           <blockquote className="blog-pullquote">
             I did not want a dashboard that pretended every block updated every day. I wanted a signal that knew the difference between “new information” and “same month, better timing.”
           </blockquote>
+
+          <h2 className="blog-section-title" data-section="cascade">How the pressure actually travels</h2>
+          <p>
+            SLEPI lives on the external side of the system, but the reason that external pressure matters is that it rarely stays there. Usually there is a chain: an outside shock hits first, the current account worsens, reserves get used up, the currency adjusts, domestic prices jump, debt servicing becomes heavier, risk premia widen, and financing conditions tighten.
+          </p>
+
+          <p>
+            The loop below is deliberately stylized rather than statistical. The point is to show ordering and mechanism. It is the mental model sitting behind the index: the external account is often where the pressure begins, but not where the damage ends.
+          </p>
+
+          <StressCascadeLoop />
 
           <h2 className="blog-section-title" data-section="pipeline">The build itself ended up being a small production system</h2>
           <p>

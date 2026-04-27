@@ -277,6 +277,81 @@ export const slepiPipelineSteps = [
   },
 ];
 
+export const slepiCascadeStages = [
+  {
+    id: 'shock',
+    act: 'Shock',
+    title: 'External shock',
+    label: 'oil spike / tourism collapse / remittance drop',
+    detail: 'Stress enters from outside the system when import costs jump or foreign-currency inflows suddenly shrink.',
+    effect: 'The external balance starts taking strain.',
+    accent: '#ef7a56',
+  },
+  {
+    id: 'current-account',
+    act: 'Transmission',
+    title: 'Current account deteriorates',
+    label: 'imports cost more or exports/inflows earn less',
+    detail: 'The country needs more foreign exchange to cover the same import bill, or it earns less from exports and services.',
+    effect: 'The funding gap widens.',
+    accent: '#f0b347',
+  },
+  {
+    id: 'reserves',
+    act: 'Transmission',
+    title: 'Reserve drawdown',
+    label: 'the Central Bank uses reserves to pay or defend',
+    detail: 'Official reserves are spent to smooth the pressure, pay external bills, or buy time in the FX market.',
+    effect: 'Policy room thins out.',
+    accent: '#f5a770',
+  },
+  {
+    id: 'currency',
+    act: 'Transmission',
+    title: 'Currency depreciation',
+    label: 'defence gets too costly or the rate is allowed to adjust',
+    detail: 'Once reserve cover is too thin to hold the line, the exchange rate weakens and the shock starts repricing domestically.',
+    effect: 'Imports and FX liabilities get more expensive.',
+    accent: '#e96f8d',
+  },
+  {
+    id: 'inflation',
+    act: 'Repricing',
+    title: 'Imported inflation',
+    label: 'the domestic price of imported goods rises',
+    detail: 'Fuel, food, medicine, and other imported inputs become costlier in local currency terms after the exchange-rate move.',
+    effect: 'Real incomes and policy space compress.',
+    accent: '#ee8b66',
+  },
+  {
+    id: 'debt',
+    act: 'Repricing',
+    title: 'Debt servicing strain',
+    label: 'foreign-currency debt gets heavier in LKR terms',
+    detail: 'The same dollar coupon suddenly requires more local currency, raising the burden on public and private balance sheets.',
+    effect: 'Solvency concerns intensify.',
+    accent: '#bf5f49',
+  },
+  {
+    id: 'risk',
+    act: 'Feedback',
+    title: 'Sovereign risk premium rises',
+    label: 'investors demand more yield to hold the debt',
+    detail: 'Markets start pricing higher rollover and default risk, so spreads widen and new borrowing becomes more punitive.',
+    effect: 'Market access worsens.',
+    accent: '#ba6f88',
+  },
+  {
+    id: 'finance',
+    act: 'Feedback',
+    title: 'Financing conditions tighten',
+    label: 'cheap refinancing disappears and the squeeze deepens',
+    detail: 'The country can no longer roll debt on easy terms, which feeds the pressure back into the macro system.',
+    effect: 'The external squeeze reinforces itself.',
+    accent: '#8bb8bf',
+  },
+];
+
 export const slepiReleaseMatrix = [
   {
     month: 'Jan 2026',
